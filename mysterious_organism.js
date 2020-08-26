@@ -47,9 +47,28 @@ const pAequorFactory = (specimenNum, dna) => {
     };
 }
 
+const produce = () =>
+{
+    let arr = [];
+    let counter = 1;
+    do
+    {
+        let org = pAequorFactory(counter, mockUpStrand());
+        if (org.willLikelySurvive())
+        {
+            arr.push(org);
+            counter++;
+        }
+    }while (arr.length < 30);
+    return arr;
+}
+
+
 let org1 = pAequorFactory(1, mockUpStrand());
 let org2 = pAequorFactory(2, mockUpStrand());
 //org.mutate();
 //console.log(pAequorFactory(1, mockUpStrand()));
 //org1.compareDNA(org2);
 //console.log(org1.willLikelySurvive());
+arr = produce();
+console.log(arr);
