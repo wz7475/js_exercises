@@ -26,10 +26,21 @@ const pAequorFactory = (specimenNum, dna) => {
                 } while (dna[i] === buf);
                 //console.log("new: " + dna[i]);
             }
+        },
+        compareDNA(another) {
+            let counter = 0;
+            for (let i in this.dna) {
+                if (this.dna[i] === another.dna[i])
+                    counter++;
+            }
+            let score = Math.round(counter / 15 * 100);
+            console.log(`specimen #${this.specimenNum} and specimen #${another.specimenNum} have ${score}% DNA in common`);
         }
     };
 }
 
-/let org = pAequorFactory(1, mockUpStrand());
+let org1 = pAequorFactory(1, mockUpStrand());
+let org2 = pAequorFactory(2, mockUpStrand());
 //org.mutate();
 //console.log(pAequorFactory(1, mockUpStrand()));
+org1.compareDNA(org2);
