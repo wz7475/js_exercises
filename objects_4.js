@@ -35,6 +35,14 @@ const pAequorFactory = (specimenNum, dna) => {
             }
             let score = Math.round(counter / 15 * 100);
             console.log(`specimen #${this.specimenNum} and specimen #${another.specimenNum} have ${score}% DNA in common`);
+        },
+        willLikelySurvive() {
+            let counter = 0;
+            for (let i in this.dna) {
+                if (this.dna[i] === "G" || this.dna[i] === "C")
+                    counter++;
+            }
+            return counter / 15 >= 0.6 ?  true :  false;
         }
     };
 }
@@ -43,4 +51,5 @@ let org1 = pAequorFactory(1, mockUpStrand());
 let org2 = pAequorFactory(2, mockUpStrand());
 //org.mutate();
 //console.log(pAequorFactory(1, mockUpStrand()));
-org1.compareDNA(org2);
+//org1.compareDNA(org2);
+//console.log(org1.willLikelySurvive());
