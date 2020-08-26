@@ -13,3 +13,15 @@ const returnRandBase = () => {
     return newStrand
   }
     
+const pAequorFactory = (specimenNum, dna) => 
+{
+    const organism =
+    {
+        specimenNum,
+        dna
+    }
+    return organism;
+}
+
+
+//console.log(pAequorFactory(1, mockUpStrand()));
