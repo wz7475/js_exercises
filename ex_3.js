@@ -1,3 +1,6 @@
+/* task is to sort array of objects by values of numTeeth objects' properties */
+
+
 const speciesArray = [{ speciesName: 'shark', numTeeth: 50 }, { speciesName: 'dog', numTeeth: 42 }, { speciesName: 'alligator', numTeeth: 80 }, { speciesName: 'human', numTeeth: 32 }];
 
 // Write your code here:
