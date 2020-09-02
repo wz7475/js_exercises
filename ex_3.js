@@ -6,19 +6,19 @@ const speciesArray = [{ speciesName: 'shark', numTeeth: 50 }, { speciesName: 'do
 // Write your code here:
 const sortSpeciesByTeeth = arr => {
     let score = [];
-    let counter = arr.length;
-    while (counter != 0) {
-        let lider;
+    //let counter = arr.length;
+    while (arr.length != 0) {
+        let lider = arr[0];
         /* arr.forEach(i => {
             if (i != "undefined"){
                 lider = i;
             } */
-        for (let i in arr) {
+        /* for (let i in arr) {
             if (arr[i] != "undefined") {
                 lider = arr[i];
                 break;
             }
-        }
+        } */
 
         arr.forEach(i => {
             //console.log(i);
@@ -28,12 +28,10 @@ const sortSpeciesByTeeth = arr => {
         })
 
         score.push(lider);
-        delete arr[arr.indexOf(lider)];
-        counter--;
+        /* delete arr[arr.indexOf(lider)];
+        counter--; */
+        arr.splice(arr.indexOf(lider), 1);
 
-        if (score.length === 3) {
-            let test;
-        }
     }
     return score;
 }
